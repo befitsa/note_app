@@ -4,7 +4,12 @@ import 'package:stacked/stacked.dart';
 import 'add_edit_note_viewmodel.dart';
 
 class AddEditNoteView extends StackedView<AddEditNoteViewModel> {
-  const AddEditNoteView({Key? key}) : super(key: key);
+  final String? noteId;
+
+  const AddEditNoteView({
+    Key? key,
+    this.noteId,
+  }) : super(key: key);
 
   @override
   Widget builder(
@@ -13,10 +18,16 @@ class AddEditNoteView extends StackedView<AddEditNoteViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: Container(
         padding: const EdgeInsets.only(left: 25.0, right: 25.0),
-        child: const Center(child: Text("AddEditNoteView")),
+        child: Center(
+          child: Text(
+            noteId == null
+                ? "Add New Note"
+                : "Edit Note ID: $noteId",
+          ),
+        ),
       ),
     );
   }

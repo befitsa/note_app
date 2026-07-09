@@ -102,7 +102,8 @@ class StackedRouter extends _i1.RouterBase {
         orElse: () => const AddEditNoteViewArguments(),
       );
       return _i8.MaterialPageRoute<dynamic>(
-        builder: (context) => _i5.AddEditNoteView(key: args.key),
+        builder: (context) =>
+            _i5.AddEditNoteView(key: args.key, noteId: args.noteId),
         settings: data,
       );
     },
@@ -200,24 +201,29 @@ class DashboardViewArguments {
 }
 
 class AddEditNoteViewArguments {
-  const AddEditNoteViewArguments({this.key});
+  const AddEditNoteViewArguments({
+    this.key,
+    this.noteId,
+  });
 
   final _i8.Key? key;
 
+  final String? noteId;
+
   @override
   String toString() {
-    return '{"key": "$key"}';
+    return '{"key": "$key", "noteId": "$noteId"}';
   }
 
   @override
   bool operator ==(covariant AddEditNoteViewArguments other) {
     if (identical(this, other)) return true;
-    return other.key == key;
+    return other.key == key && other.noteId == noteId;
   }
 
   @override
   int get hashCode {
-    return key.hashCode;
+    return key.hashCode ^ noteId.hashCode;
   }
 }
 
@@ -316,6 +322,7 @@ extension NavigatorStateExtension on _i9.NavigationService {
 
   Future<dynamic> navigateToAddEditNoteView({
     _i8.Key? key,
+    String? noteId,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -323,7 +330,7 @@ extension NavigatorStateExtension on _i9.NavigationService {
         transition,
   }) async {
     return navigateTo<dynamic>(Routes.addEditNoteView,
-        arguments: AddEditNoteViewArguments(key: key),
+        arguments: AddEditNoteViewArguments(key: key, noteId: noteId),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -412,6 +419,7 @@ extension NavigatorStateExtension on _i9.NavigationService {
 
   Future<dynamic> replaceWithAddEditNoteView({
     _i8.Key? key,
+    String? noteId,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -419,7 +427,7 @@ extension NavigatorStateExtension on _i9.NavigationService {
         transition,
   }) async {
     return replaceWith<dynamic>(Routes.addEditNoteView,
-        arguments: AddEditNoteViewArguments(key: key),
+        arguments: AddEditNoteViewArguments(key: key, noteId: noteId),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

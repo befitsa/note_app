@@ -1,18 +1,25 @@
 import 'package:stacked/stacked.dart';
-import 'package:note_app_2/app/app.locator.dart';
-import 'package:note_app_2/app/app.router.dart';
 import 'package:stacked_services/stacked_services.dart';
+
+import '../../../app/app.locator.dart';
+import '../../../app/app.router.dart';
+import '../../../services/notes_service.dart';
 
 class StartupViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
+  final _notesService = locator<NotesService>();
 
-  // Place anything here that needs to happen before we get into the application
-  Future runStartupLogic() async {
-    await Future.delayed(const Duration(seconds: 3));
+  Future<void> initialise() async {
+    try {
+      await _notesService.initialise();
 
-    // This is where you can make decisions on where your app should navigate when
-    // you have custom startup logic
+      // Optional splash delay
+      await Future.delayed(const Duration(milliseconds: 900));
 
-    _navigationService.replaceWithHomeView();
+      await _navigationService.replaceWithHomeView();
+    } catch (e, s) {
+      print('Startup error: $e');
+      print(s);
+    }
   }
 }
