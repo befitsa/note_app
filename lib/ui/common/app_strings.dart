@@ -2,12 +2,11 @@ const String ksHomeBottomSheetTitle = 'Build Great Apps!';
 const String ksHomeBottomSheetDescription =
     'Stacked is built to help you build better apps. Give us a chance and we\'ll prove it to you. Check out stacked.filledstacks.com to learn more';
 
-/// Centralised user-facing copy so it's easy to keep consistent (and to
-/// localise later on).
 class AppStrings {
   AppStrings._();
 
   static const String appName = 'MASTAWESHA';
+  static const String appNameHome = 'Fitsum';
   static const String appVersion = '1.0.0';
   static const String developer = 'Fitsum';
 

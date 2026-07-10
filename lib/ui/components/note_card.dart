@@ -7,8 +7,8 @@ import 'category_chip.dart';
 import 'favorite_icon.dart';
 import 'pinned_badge.dart';
 
-/// Card representing a single note in a list/grid, with swipe-to-archive
-/// and swipe-to-favorite gestures.
+// Card representing a single note in a list/grid, with swipe-to-archive
+// and swipe-to-favorite gestures.
 class NoteCard extends StatelessWidget {
   final NoteModel note;
   final VoidCallback onTap;

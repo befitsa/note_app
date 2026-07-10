@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import './app_colors.dart';
 
-/// Typography scale for NotesHub. Colours are applied per-theme by the
-/// callers (see [ui_helpers.dart] `context.textPrimary` etc.) so these
-/// styles focus purely on weight/size/letter-spacing.
+
 class AppTextStyles {
   AppTextStyles._();
 
@@ -15,12 +13,12 @@ class AppTextStyles {
 
   static const TextStyle headline = TextStyle(
     fontSize: 20,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w300,
   );
 
   static const TextStyle title = TextStyle(
     fontSize: 17,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w400,
   );
 
   static const TextStyle body = TextStyle(
@@ -42,7 +40,7 @@ class AppTextStyles {
 
   static const TextStyle button = TextStyle(
     fontSize: 15,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w100,
     letterSpacing: 0.2,
   );
 
