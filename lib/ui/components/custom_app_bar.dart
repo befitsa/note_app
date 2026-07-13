@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import '../common/app_text_styles.dart';
 import '../common/ui_helpers.dart';
 
-/// Simple reusable app bar used for inner screens (Add/Edit Note,
-/// Settings, Search) that need a back button + title + optional actions.
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final List<Widget>? actions;

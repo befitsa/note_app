@@ -4,9 +4,6 @@ import '../common/app_text_styles.dart';
 import '../common/ui_helpers.dart';
 import 'app_button.dart';
 
-/// Reusable confirmation dialog content, shown through
-/// [DialogService.showCustomDialog] (registered in app.dart) for delete /
-/// archive / delete-permanently confirmations.
 class ConfirmationDialog extends StatelessWidget {
   final String title;
   final String body;

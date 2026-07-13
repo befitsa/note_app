@@ -29,7 +29,6 @@ const List<_NavTabInfo> _navTabs = [
 class HomeView extends StackedView<HomeViewModel> {
   const HomeView({super.key});
 
-  // ── Required StackedView overrides ────────────────────────────
   @override
   Widget builder(BuildContext context, HomeViewModel viewModel, Widget? child) {
     return Scaffold(
@@ -61,11 +60,8 @@ class HomeView extends StackedView<HomeViewModel> {
 
   @override
   void onViewModelReady(HomeViewModel viewModel) {
-    // Leave empty, or put initial-data-loading logic here.
-    // Do NOT put widget-building methods in here.
   }
 
-  // ── Floating "Add Note" button ─────────────────────────────────
   Widget? _buildAddNoteButton(HomeViewModel viewModel) {
     if (viewModel.multiSelectMode) {
       return null; // hidden while multi-selecting
@@ -80,7 +76,6 @@ class HomeView extends StackedView<HomeViewModel> {
     );
   }
 
-  // ── Bottom bar: switches between nav bar and multi-select bar ─
   Widget _buildBottomBar(BuildContext context, HomeViewModel viewModel) {
     if (viewModel.multiSelectMode) {
       return _buildMultiSelectBar(context, viewModel);
@@ -203,7 +198,6 @@ class HomeView extends StackedView<HomeViewModel> {
     );
   }
 
-  // ── Header: greeting + app name + search bar ───────────────────
   Widget _buildHeader(BuildContext context, HomeViewModel viewModel) {
     return Container(
       padding: const EdgeInsets.fromLTRB(AppSpacing.md, AppSpacing.md, AppSpacing.md, AppSpacing.lg),
@@ -287,7 +281,6 @@ class HomeView extends StackedView<HomeViewModel> {
     );
   }
 
-  // ── Body: empty states or the list of notes ─────────────────────
   Widget _buildBody(BuildContext context, HomeViewModel viewModel) {
     if (!viewModel.hasAnyNotes) {
       return SliverFillRemaining(
@@ -490,7 +483,6 @@ class HomeView extends StackedView<HomeViewModel> {
     );
   }
 
-  // ── Filter label helpers ────────────────────────────────────────
   String _titleFor(HomeFilter filter) {
     switch (filter) {
       case HomeFilter.all:

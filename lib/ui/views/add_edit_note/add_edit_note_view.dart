@@ -9,9 +9,6 @@ import '../../components/custom_text_field.dart';
 import '../../common/ui_helpers.dart';
 import 'add_edit_note_viewmodel.dart';
 
-/// Create/edit screen: title + content fields with auto-save, category
-/// dropdown, colour picker, pin/favorite toggles, and a character
-/// counter.
 class AddEditNoteView extends StackedView<AddEditNoteViewModel> {
   final String? noteId;
   const AddEditNoteView({super.key, this.noteId});

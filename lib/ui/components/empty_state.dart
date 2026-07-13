@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import '../common/app_text_styles.dart';
 import '../common/ui_helpers.dart';
 
-/// Friendly illustration + message shown when a list has nothing to show
-/// (no notes, no search results, empty archive/favorites...).
 class EmptyState extends StatelessWidget {
   final IconData icon;
   final String title;

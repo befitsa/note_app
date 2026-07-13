@@ -10,8 +10,6 @@ import '../../components/search_bar.dart';
 import '../../common/ui_helpers.dart';
 import 'search_viewmodel.dart';
 
-/// Dedicated live-search screen with scope filters
-/// (all / pinned / archived).
 class SearchView extends StackedView<SearchViewModel> {
   const SearchView({super.key});
 

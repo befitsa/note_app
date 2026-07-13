@@ -5,8 +5,6 @@ import '../common/app_text_styles.dart';
 
 enum AppButtonStyle { primary, secondary, danger, ghost }
 
-/// A single, reusable button that covers every button style needed across
-/// NotesHub (primary CTA, secondary, destructive, ghost/text).
 class AppButton extends StatelessWidget {
   final String label;
   final VoidCallback? onPressed;

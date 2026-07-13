@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import '../common/app_text_styles.dart';
 import '../common/ui_helpers.dart';
 
-/// Simple label/value row used in the Settings & Dashboard "storage
-/// statistics" section.
 class StatisticsTile extends StatelessWidget {
   final String label;
   final String value;

@@ -3,9 +3,8 @@ import 'package:stacked/stacked.dart';
 import '../../common/app_colors.dart';
 import '../../common/app_strings.dart';
 import 'startup_viewmodel.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-/// Splash screen: shows the app logo + a loading animation while
-/// StartupViewModel restores persisted data, then routes to Home.
 class StartupView extends StackedView<StartupViewModel> {
   const StartupView({super.key});
 
@@ -48,9 +47,9 @@ class StartupView extends StackedView<StartupViewModel> {
                 ),
               ),
               const SizedBox(height: 24),
-              const Text(
+              Text(
                 AppStrings.appName,
-                style: TextStyle(
+                style: GoogleFonts.notoSerif(
                   color: Colors.white,
                   fontSize: 28,
                   fontWeight: FontWeight.w800,
@@ -82,8 +81,7 @@ class StartupView extends StackedView<StartupViewModel> {
   }
 
   @override
-  StartupViewModel viewModelBuilder(BuildContext context) =>
-      StartupViewModel();
+  StartupViewModel viewModelBuilder(BuildContext context) => StartupViewModel();
 
   @override
   void onViewModelReady(StartupViewModel viewModel) {

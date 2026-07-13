@@ -3,8 +3,6 @@ import '../common/app_colors.dart';
 import '../common/app_text_styles.dart';
 import '../common/ui_helpers.dart';
 
-/// Segmented control for Light / Dark / System theme selection, used on
-/// the Settings screen.
 class ThemeSwitcher extends StatelessWidget {
   final ThemeMode currentMode;
   final ValueChanged<ThemeMode> onChanged;

@@ -5,10 +5,6 @@ import 'package:flutter/material.dart';
 import './app_colors.dart';
 import './app_spacing.dart';
 
-/// ======================================================
-/// Theme Extensions
-/// ======================================================
-
 extension ContextThemeX on BuildContext {
   bool get isDark => Theme.of(this).brightness == Brightness.dark;
 
@@ -28,9 +24,6 @@ extension ContextThemeX on BuildContext {
       isDark ? AppColors.darkBorder : AppColors.lightBorder;
 }
 
-/// ======================================================
-/// Spacing
-/// ======================================================
 
 const Widget verticalSpaceTiny = SizedBox(height: AppSpacing.xxs);
 const Widget verticalSpaceSmall = SizedBox(height: AppSpacing.xs);
@@ -56,9 +49,6 @@ Widget spacedDivider = const Column(
   ],
 );
 
-/// ======================================================
-/// Screen Helpers
-/// ======================================================
 
 double screenWidth(BuildContext context) =>
     MediaQuery.of(context).size.width;
@@ -102,9 +92,6 @@ double quarterScreenWidth(BuildContext context) =>
 double getResponsiveHorizontalSpaceMedium(BuildContext context) =>
     screenWidthFraction(context, dividedBy: 10);
 
-/// ======================================================
-/// Responsive Font Sizes
-/// ======================================================
 
 double getResponsiveSmallFontSize(BuildContext context) =>
     getResponsiveFontSize(
@@ -153,10 +140,6 @@ double getResponsiveFontSize(
   );
 }
 
-/// ======================================================
-/// Date Helpers
-/// ======================================================
-
 String timeAgo(DateTime date) {
   final diff = DateTime.now().difference(date);
 
@@ -194,9 +177,6 @@ String timeAgo(DateTime date) {
   return '${months[date.month - 1]} ${date.day}';
 }
 
-/// ======================================================
-/// Greeting
-/// ======================================================
 
 String greetingForNow() {
   final hour = DateTime.now().hour;

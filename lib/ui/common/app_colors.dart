@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Centralised colour palette for NotesHub.
-///
-/// Keeping every colour here means the whole app can be re-themed by
-/// editing a single file.
 class AppColors {
   AppColors._();
 

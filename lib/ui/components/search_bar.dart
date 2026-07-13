@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import '../common/app_sizes.dart';
 import '../common/ui_helpers.dart';
 
-/// Reusable search field with a leading search icon and optional
-/// trailing clear button. Used on Home and the dedicated Search screen.
 class AppSearchBar extends StatelessWidget {
   final TextEditingController controller;
   final String hint;

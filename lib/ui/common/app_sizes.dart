@@ -1,7 +1,6 @@
 // Common size
 class AppSizes {
   AppSizes._();
-  // ignore: constant_identifier_names
   static const double CardRadius = 24;
   static const double chipRadius = 100;
   static const double buttonRadius = 16;

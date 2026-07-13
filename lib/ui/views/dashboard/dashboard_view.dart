@@ -9,8 +9,6 @@ import '../../components/statistics_tile.dart';
 import '../../common/ui_helpers.dart';
 import 'dashboard_viewmodel.dart';
 
-/// Full-screen dashboard with animated statistic cards and a storage
-/// breakdown, reached from the chart icon on Home.
 class DashboardView extends StackedView<DashboardViewModel> {
   const DashboardView({super.key});
 

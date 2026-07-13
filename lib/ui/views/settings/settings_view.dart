@@ -11,7 +11,6 @@ import '../../components/theme_switcher.dart';
 import '../../common/ui_helpers.dart';
 import 'settings_viewmodel.dart';
 
-/// Theme, layout, sort preferences and app "About" info.
 class SettingsView extends StackedView<SettingsViewModel> {
   const SettingsView({super.key});
 

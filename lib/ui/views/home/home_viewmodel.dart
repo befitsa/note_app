@@ -8,12 +8,6 @@ import '../../../services/theme_service.dart';
 import '../../common/app_strings.dart';
 import '../../../shared/enums/note_enums.dart';
 
-/// Drives the Home dashboard: statistics, pinned/recent/all-notes
-/// sections, search, filtering, sorting, multi-select and bottom-nav tab
-/// switching.
-///
-/// [ReactiveViewModel.listenableServices] wires this VM to [NotesService]
-/// and [ThemeService] so the UI rebuilds the instant either changes.
 class HomeViewModel extends ReactiveViewModel {
   final _notesService = locator<NotesService>();
   final _themeService = locator<ThemeService>();
@@ -82,7 +76,6 @@ class HomeViewModel extends ReactiveViewModel {
         try {
           _navigationService.navigateTo(Routes.settingsView);
         } catch (_) {
-          // Never let a navigation hiccup take down the whole app.
         }
         return;
     }
@@ -112,17 +105,12 @@ class HomeViewModel extends ReactiveViewModel {
   Future<void> toggleFavorite(String id) => _notesService.toggleFavorite(id);
 
   void _safeSnackbar(String message) {
-    // A SnackbarService failure (e.g. no ScaffoldMessenger attached yet)
-    // must never crash the app or interrupt whatever just succeeded.
-    // An explicit duration is set so the message always auto-dismisses
-    // instead of relying on whatever internal default the package uses.
     try {
       _snackbarService.showSnackbar(
         message: message,
         duration: const Duration(seconds: 2),
       );
     } catch (_) {
-      // Intentionally swallowed.
     }
   }
 
@@ -158,9 +146,6 @@ class HomeViewModel extends ReactiveViewModel {
     }
   }
 
-  // ---------------------------------------------------------------------
-  // Multi-select
-  // ---------------------------------------------------------------------
 
   void enterMultiSelect(String firstId) {
     _multiSelectMode = true;

@@ -1,6 +1,5 @@
 import '../shared/enums/note_enums.dart';
 
-/// Core data model representing a single note.
 class NoteModel {
   final String id;
   String title;

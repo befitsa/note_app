@@ -6,8 +6,6 @@ import '../../../models/note_model.dart';
 import '../../../services/notes_service.dart';
 import '../../../shared/enums/note_enums.dart';
 
-/// Live search across titles/content, scoped to all / pinned / archived
-/// notes.
 class SearchViewModel extends ReactiveViewModel {
   final _notesService = locator<NotesService>();
   final _navigationService = locator<NavigationService>();

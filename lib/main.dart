@@ -7,20 +7,24 @@ import 'package:note_app_2/services/storage_service.dart';
 import 'package:note_app_2/services/theme_service.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setupLocator();
   await locator<StorageService>().init();
   await locator<ThemeService>().initialise();
+
   setupDialogUi();
   setupBottomSheetUi();
+
   SystemChrome.setSystemUIOverlayStyle(
-  const SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent,
-    statusBarIconBrightness: Brightness.light,
-    statusBarBrightness: Brightness.dark,
-  ),
-);
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.light,
+      statusBarBrightness: Brightness.dark,
+    ),
+  );
 
   runApp(const MainApp());
 }
@@ -40,20 +44,30 @@ class MainApp extends StatelessWidget {
           title: 'Note App',
 
           navigatorKey: StackedService.navigatorKey,
-          navigatorObservers: [StackedService.routeObserver],
+          navigatorObservers: [
+            StackedService.routeObserver,
+          ],
 
           themeMode: themeService.themeMode,
 
+          // Light Theme
           theme: ThemeData(
             useMaterial3: true,
             brightness: Brightness.light,
             colorSchemeSeed: Colors.blue,
+            textTheme: GoogleFonts.ralewayTextTheme(
+              ThemeData.light().textTheme,
+            ),
           ),
 
+          // Dark Theme
           darkTheme: ThemeData(
             useMaterial3: true,
             brightness: Brightness.dark,
             colorSchemeSeed: Colors.blue,
+            textTheme: GoogleFonts.ralewayTextTheme(
+              ThemeData.dark().textTheme,
+            ),
           ),
 
           initialRoute: Routes.startupView,

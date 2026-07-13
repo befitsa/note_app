@@ -6,8 +6,6 @@ import '../../../services/notes_service.dart';
 import '../../../services/theme_service.dart';
 import '../../../shared/enums/note_enums.dart';
 
-/// Exposes theme mode, layout (grid/list) and sort-order preferences,
-/// plus static "About" info.
 class SettingsViewModel extends ReactiveViewModel {
   final _themeService = locator<ThemeService>();
   final _notesService = locator<NotesService>();

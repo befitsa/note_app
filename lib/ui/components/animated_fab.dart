@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import '../common/app_colors.dart';
 import '../common/app_sizes.dart';
 
-/// Floating action button with a gentle scale-in entrance and press
-/// feedback, used for "Add Note".
 class AnimatedFAB extends StatefulWidget {
   final VoidCallback onPressed;
   final IconData icon;

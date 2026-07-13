@@ -3,11 +3,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models/note_model.dart';
 import '../models/app_settings.dart';
 
-/// Thin wrapper around [SharedPreferences] responsible for reading and
-/// writing everything NotesHub needs to persist: notes and app settings.
-///
-/// Keeping all raw key names and JSON encode/decode logic in one place
-/// means the rest of the app never has to know how persistence works.
 class StorageService {
   static const String _kNotesKey = 'noteshub.notes';
   static const String _kSettingsKey = 'noteshub.settings';

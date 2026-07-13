@@ -10,9 +10,6 @@ import '../../../services/notes_service.dart';
 import '../../../shared/enums/note_enums.dart';
 import '../../../shared/utils/app_snackbar.dart';
 
-/// Handles creating a new note or editing an existing one, including a
-/// debounced auto-save, the character counter, category dropdown, colour
-/// picker, and pin/favorite toggles.
 class AddEditNoteViewModel extends BaseViewModel {
   final _notesService = locator<NotesService>();
   final _navigationService = locator<NavigationService>();
@@ -134,8 +131,6 @@ class AddEditNoteViewModel extends BaseViewModel {
       try {
         showAppSnackbar('Note saved successfully');
       } catch (_) {
-        // A snackbar failure must never block navigating back after a
-        // successful save.
       }
     }
   }
@@ -156,7 +151,6 @@ class AddEditNoteViewModel extends BaseViewModel {
       try {
         showAppSnackbar('Note archived');
       } catch (_) {
-        // Never let a snackbar failure block navigating back.
       }
       _navigationService.back();
     }
@@ -166,7 +160,6 @@ class AddEditNoteViewModel extends BaseViewModel {
   void dispose() {
     _autoSaveTimer?.cancel();
     if (_dirty) {
-      // Fire-and-forget final save on the way out.
       _save(showSnackbar: false);
     }
     titleController.dispose();
