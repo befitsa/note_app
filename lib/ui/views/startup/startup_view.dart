@@ -29,7 +29,7 @@ class StartupView extends StackedView<StartupViewModel> {
             children: [
               TweenAnimationBuilder<double>(
                 tween: Tween(begin: 0.7, end: 1),
-                duration: const Duration(milliseconds: 700),
+                duration: const Duration(seconds: 700),
                 curve: Curves.easeOutBack,
                 builder: (context, scale, child) =>
                     Transform.scale(scale: scale, child: child),
@@ -49,11 +49,11 @@ class StartupView extends StackedView<StartupViewModel> {
               const SizedBox(height: 24),
               Text(
                 AppStrings.appName,
-                style: GoogleFonts.notoSerif(
+                style: GoogleFonts.jollyLodger(
                   color: Colors.white,
                   fontSize: 28,
                   fontWeight: FontWeight.w800,
-                  letterSpacing: -0.5,
+                  letterSpacing: 10,
                 ),
               ),
               const SizedBox(height: 8),

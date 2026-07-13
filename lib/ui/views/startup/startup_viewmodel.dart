@@ -14,7 +14,7 @@ class StartupViewModel extends BaseViewModel {
       await _notesService.initialise();
 
       // Optional splash delay
-      await Future.delayed(const Duration(milliseconds: 900));
+      await Future.delayed(const Duration(seconds: 10));
 
       await _navigationService.replaceWithHomeView();
     } catch (e, s) {

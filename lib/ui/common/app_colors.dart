@@ -30,12 +30,12 @@ class AppColors {
 
   // Note colour swatches available in the colour picker.
   static const List<Color> noteSwatches = [
-    Color(0xFFFFFFFF),
     Color(0xFFD6E8EE),
     Color(0xFF97CADB),
     Color(0xFFB8DCE8),
     Color(0xFFA7C7E7),
-    Color(0xFF02457A),
+    
+
   ];
 
   static const List<Color> gradientHeaderLight = [
