@@ -51,7 +51,7 @@ class StartupView extends StackedView<StartupViewModel> {
                 AppStrings.appName,
                 style: GoogleFonts.jollyLodger(
                   color: Colors.white,
-                  fontSize: 28,
+                  fontSize: 48,
                   fontWeight: FontWeight.w800,
                   letterSpacing: 10,
                 ),
